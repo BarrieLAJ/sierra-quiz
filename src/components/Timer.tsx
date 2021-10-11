@@ -4,6 +4,7 @@ const Timer = (props: {
     time: number
     context: number | string
     stop: boolean
+    setStop: (val:boolean) => void
   }) => {
   const [timer, setTimer] = useState<number>(props.time);
   const [interval, setinterval] = useState<number>()
@@ -14,6 +15,12 @@ const Timer = (props: {
             clearTimeout(interval)
         }
     }, [props.stop,interval])
+    useEffect(() => {
+      if(timer === 0 ){
+        props.setStop(true)
+      }
+      
+    }, [timer, props])
 
     useEffect(() => {
         setTimer(props.time)
@@ -22,7 +29,6 @@ const Timer = (props: {
   
    let lessthanhalf = (timer/props.time) * 100 <= 15 ? 'text-red-700' : 'text-gray-800'
    
-   console.log(lessthanhalf)
 
   useEffect(() => {
     let interval: any;

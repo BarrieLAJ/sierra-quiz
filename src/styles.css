@@ -1,5 +1,51 @@
 @tailwind base;
 
-@tailwind component;
+@tailwind components;
 
 @tailwind utilities;
+
+.app {
+  height: 100vh;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .app {
+    height: -webkit-fill-available;
+  }
+}
+
+
+.button-enter{
+  transform: scale(0);
+}
+
+.button-enter-done{
+  transform: scale(1);
+  transition: transform 200ms ease-in;
+}
+
+.button-exit{
+  transform: scale(1);
+}
+.button-exit-done{
+  transform: scale(0);
+  transition: transform 400ms ease-out;
+}
+
+.show-enter{
+  transform: scale(0)
+}
+
+.show-enter-done{
+  transform: scale(1);
+  transition: transform 500ms ease-in;
+}
+
+.show-exit{
+  transform: scale(1);
+}
+
+.show-exit-done{
+  transform: scale(0);
+  transition: transform 300ms ease-out;
+}

@@ -44,9 +44,11 @@ const appSlice = createSlice({
         //     state.time = state.questions[state.question_number].time
         // },
         addPoints(state, action: PayloadAction<number>){
+            // console.log(action)
             state.points += action.payload
         },
         changeQNumber(state, action: PayloadAction<number>){
+            // console.log(action)
             state.question_number =  action.payload
         }
     }
