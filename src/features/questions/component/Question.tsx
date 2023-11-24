@@ -109,9 +109,8 @@ const Question = ({
             >
               {wQuestion.options.map((option, i) => (
                 <button
-                  className={`w-11/12 bg-blue-500 text-gray-100 text-left p-4 text-lg rounded-lg focus:outline-none shadow transition ${
-                    i === ansIndex && "correct"
-                  }`}
+                  className={`w-11/12 bg-blue-500 text-gray-100 text-left p-4 text-lg rounded-lg focus:outline-none shadow transition ${i === ansIndex && "correct"
+                    }`}
                   disabled={selected}
                   data-option={`${i}`}
                   key={i}
